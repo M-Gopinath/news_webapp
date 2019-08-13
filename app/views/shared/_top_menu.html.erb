@@ -1,0 +1,27 @@
+<div class="container-fluid">
+  <div class="col-md-12 log-sign-12-padding">
+    <div class="navbar-header">
+      <a class="navbar-brand" href="#"><%= current_admin.present? ? "News API" : "News API" %></a>
+    </div>
+    <% if current_admin.present? %>
+      <ul class="nav navbar-top-links navbar-right">
+        <li class="dropdown">
+          <a class="dropdown-toggle" data-toggle="dropdown" href="#">
+            <i class="fa fa-user fa-fw"></i>  <i class="fa fa-caret-down"></i>
+          </a>
+          <ul class="dropdown-menu dropdown-user">
+              <li>
+                <% if current_admin.present? %>
+                  <%= link_to "Logout" , destroy_admin_session_path, method: :delete %>
+                <%else%>
+                  <%= link_to "Login" , admin_session_path %>
+                <%end%>
+               </li>
+            </ul>
+        </li>
+      </ul>
+    <%end%>
+  </div>
+</div>
+
+

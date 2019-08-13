@@ -1,0 +1,217 @@
+<div class="desktop-hide">
+  <div id="mobile-header">
+    <nav class="navbar navbar-default navbar-fixed-top">
+       <div class="container-fluid">
+          <div class="navbar-header pull-left">
+              <a class="navbar-brand" href="javascript:void(0)">
+                <div id="mobile-nav">
+                  <%= image_tag "menu.png", class: 'toggle-menu'%>
+                  <%= image_tag "left _arrow.png", class: 'arrow'%>
+                </div>
+              </a>
+            </div>
+            <div class="navbar-header pull-right">
+              <div class="inbox-show-menu">
+                 <ul class="list-inline custom-list-inline">
+                    <li>
+                      <a href="javascript:void(0);" class="email_for_api_link" data-toggle="modal" data-target="#myModal"><i class="far fa-envelope"></i>
+                      <!-- <span class="inbox-notifications"></span> --> </a>
+                    </li>
+                    <!-- <li><a href="#"><i class="fas fa-download"></i></a></li>
+                    <li><a href="#"><i class="far fa-trash-alt"></i></a></li> -->
+                 </ul>
+              </div>
+              <div class="fake-input moile-fake-input">
+                <input type="text" placeholder="Search" class="form-control api_news_search" id="api_news_search" data-type="recent">
+                <%= image_tag "search_image.png"%>
+              </div>
+            </div>
+        </div>
+      </div>
+    </nav>
+  </div>
+  <nav class="mobile-side-menu">
+    <div class="col-md-12 mobile-profile-img">
+      <%#= image_tag "profile_img.png"%>
+      <h4 class="media-heading mediam-font"><% if current_admin.present? %><%= "#{current_admin.try(:first_name)} #{current_admin.try(:last_name)}" %><%end%></h4>
+      <p><span><small><% if current_admin.present? %><%= current_admin.try(:email) %><%end%></small></span></p>
+      <p>Powered by NewsAPI.org</p>
+    </div>
+    <div class="row">
+      <div class="col-md-12">
+        <ul class="list menu">
+          <li class="active-link get_news_api" data-type="recent"><a href="javascript:void(0);" data-type="recent" class="get_news_api"><span><i class="far fa-newspaper"></i></span>Recent</a></li>
+          <li class="get_news_api" data-type="all"><a href="javascript:void(0);" data-type="all" class="get_news_api"><span><i class="fas fa-globe"></i></span>All</a></li>
+          <% if current_admin.present? %>
+            <li><%= link_to destroy_admin_session_path, method: :delete do %><span><i class="fas fa-sign-out-alt"></i></span>Logout<%end%></li>
+            <li><%= link_to registration_path(current_admin), data: { confirm: "Are you sure?" }, method: :delete do %><span><i class="fas fa-times"></i></span>Cancel  Account<%end%></li>
+          <%end%>
+         <!--  <li><a href="#"><span><i class="fas fa-download"></i></span>Offline</a></li> -->
+        </ul>
+      </div>
+    </div>
+  </nav>
+</div>
+
+
+<div class="container-fluid">
+  <div class="row">
+    <div class="col-md-12 mobil-padding-0">
+      <div class="col-md-2 mobile-desk-hid-show">
+        <div class="news_options">
+          <h5>News</h5>
+          <ul class="list">
+             <li class="active-link get_news_api" data-type="recent"><a href="javascript:void(0);" data-type="recent" class="get_news_api"><span><i class="far fa-newspaper"></i></span>Recent</a></li>
+             <li class="get_news_api" data-type="all"><a href="javascript:void(0);" data-type="all" class="get_news_api"><span><i class="fas fa-globe"></i></span>All</a></li>
+             <% if current_admin.present? %>
+              <li><%= link_to destroy_admin_session_path, method: :delete do %><span><i class="fas fa-sign-out-alt"></i></span>Logout<%end%></li>
+              <li><%= link_to registration_path(current_admin), data: { confirm: "Are you sure?" }, method: :delete do %><span><i class="fas fa-times"></i></span>Cancel Account<%end%></li>
+             <%end%>
+          </ul>
+        <div class="media profile-details bottom-of-page">
+          <a class="pull-left" href="#">
+            <%#= image_tag "profile_img.png"%>
+          </a>
+          <div class="media-body profle-title ">
+            <h4 class="media-heading mediam-font"><% if current_admin.present? %><%= "#{current_admin.try(:first_name)} #{current_admin.try(:last_name)}" %><%end%></h4>
+            <p><span style="margin-left:5px;"><small><% if current_admin.present? %><%= current_admin.try(:email) %><%end%></small></span></p>
+            <p>Powered by NewsAPI.org</p>
+          </div>
+        </div>
+        </div>
+      </div>
+      <div class="col-md-4 mobil-padding-0">
+        <div class="news_inbox">
+          <div class="mobile-hide mobile-desk-hid-show">
+            <div class="col-md-12">
+              <div class="form-group">
+                <div class="fake-input">
+                  <input type="text" placeholder="Search" class="form-control api_news_search" id="api_news_search" data-type="recent">
+                  <%= image_tag "search_image.png"%>
+                </div>
+              </div>
+            </div>
+            <div class="col-md-12 news-article-title">
+              <div class="row">
+                <div class="col-md-7">
+                  <h3>News Inbox</h3>
+                </div>
+                <div class="col-md-5">
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="inbox-detail-scroll news_api_data_lists">
+            <%= render "news/news_api_data_lists" %>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-6">
+        <div class="col-md-12 notificatins-list">
+          <ul class="list-inline custom-list-inline">
+            <li><a href="javascript:void(0);" class="email_for_api_link" data-toggle="modal" data-target="#myModal"><i class="far fa-envelope"></i>
+                      <!-- <span class="inbox-notifications"></span> --> </a></li>
+            <!-- <li><a href="#"><i class="fas fa-download"></i></a></li>
+            <li><a href="#"><i class="far fa-trash-alt"></i></a></li> -->
+          </ul>
+        </div>
+        <div class="col-md-12 view_article_details">
+          <h4 class="unknown-article">Unknow Select Article</h4>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+
+<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalCenterTitle" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal">&times;</button>
+      </div>
+      <div class="modal-body">
+        <div class="lab-modal-body">
+
+          <div class="fade-in-message">Email send sucessfully</div>
+          <div class="fade-out-message">
+            <h2> Sent Article to Email </h2>
+            <div class="form-group">
+              <%= text_field_tag :email_api, nil,placeholder: "Email address", class: "form-control email_api_input" %></p>
+            </div>
+            <p class="error_email_api"></p>
+            <div class="text-center">
+              <button type="button" class="btn btn-submit sent_news_api_link_btn">Sent</button>
+            </div>
+            <div class="center">
+              <p class="text-center"><%= image_tag "testin.svg", class: "spin-image"%> </p>
+            </div>
+          </div>
+        </div>
+    </div>
+  </div>
+</div>
+
+
+
+<script type="text/javascript">
+
+    $(document).ready(function() {
+      $('.toggle-menu').click(function(event) {
+        // $("body").toggleClass('body-overlap', 'add');
+        $('nav').toggleClass('active');
+        event.stopPropagation();
+      });
+    });
+
+    $(document).on('click', function(event) {
+      if (!$(event.target).closest('.menu li').length)  {
+        $('nav').removeClass('active');
+        // $("body").toggleClass('body-overlap', 'add');
+      }
+    });
+
+    $(document).on('click','.customize-col-md-12',function(event){
+      $('.moile-fake-input, .toggle-menu').fadeOut(300, function(){
+        $('.inbox-show-menu, .arrow').fadeIn(300);
+      });
+
+      $('.toggle-menu').fadeOut(300, function(){
+        $('.arrow').fadeIn(300);
+      });
+    });
+
+
+    $('.arrow').click(function(event) {
+      $('.active-border-color').removeClass();
+      $('.inbox-show-menu, .arrow').fadeOut(300, function(){
+        $('.moile-fake-input').fadeIn(300);
+      });
+
+      $('.arrow').fadeOut(300, function(){
+        $('.toggle-menu').fadeIn(300);
+      });
+
+      $('.view_article_details').fadeOut(300, function(){
+        $('.inbox-detail-scroll').fadeIn(300);
+      });
+    });
+
+    $('.get_news_api').click(function(event) {
+      $('.active-border-color').removeClass();
+      $('.inbox-show-menu, .arrow').fadeOut(300, function(){
+        $('.moile-fake-input').fadeIn(300);
+      });
+
+      $('.arrow').fadeOut(300, function(){
+        $('.toggle-menu').fadeIn(300);
+      });
+
+      $('.view_article_details').fadeOut(300, function(){
+        $('.inbox-detail-scroll').fadeIn(300);
+      });
+    });
+</script>
+

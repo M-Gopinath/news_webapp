@@ -1,0 +1,26 @@
+<% @articles.each.with_index(1) do |article,index| %>
+  <div class="col-md-12 customize-col-md-12 <%= 'active-col-md-12 active-border-color' if index == 0 %>">
+    <a data-title="<%= article['title']%>" data-desc="<%= article['description'] %>" data-author="<%= article['author'] %>" data-img="<%= article['urlToImage'] %>" data-publish_at="<%=article['publishedAt']%>" data-url="<%= article['url'] %>" data-source="<%= article['source']['name'] %>" class="get_article_detail">
+      <div class="news_inbox_details">
+        <div class="row">
+          <div class="col-md-9 col-xs-9">
+            <h5 class="new_notifications"><%= article['source']['name'] %></h5>
+            <p><%= article['title'] %></p>
+          </div>
+          <div class="col-md-3 padding-6 col-xs-3">
+            <h5 class="time-style"><%= article['publishedAt'].to_time.strftime('%I:%M %P') %></h5>
+          </div>
+        </div>
+      </div>
+    </a>
+  </div>
+<%end%>
+<script type="text/javascript">
+  $(document).ready(function() {
+    if ($(window).width() >= 768) {
+      setTimeout(function() {
+          $(".get_article_detail:first").trigger('click');
+      },10);
+    }
+  });
+</script>

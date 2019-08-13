@@ -1,0 +1,47 @@
+<div class="container-fluid style-checkbox-full">
+  <div class="row">
+    <div class="col-md-4 col-md-offset-4">
+      <div class="sign_up_form">
+        <p class="text-center"><svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px"
+         width="80" height="80"
+         viewBox="0 0 252 252"
+         style="fill:#000000;"><g fill"none" fill-rule="nonzero" stroke="none" stroke-width="1" stroke-linecap="butt" stroke-linejoin="miter" stroke-miterlimit="10" stroke-dasharray="" stroke-dashoffset="0" font-family="none" font-weight="none" font-size="none" text-anchor="none" style="mix-blend-mode: normal"><path d="M0,252v-252h252v252z" fill="none"></path><g id="Слой_1" fill="#51bfa4"><path d="M132.75281,196.99313c5.12663,-14.06869 16.57688,-25.87331 28.53506,-38.178c17.49431,-17.99831 35.58712,-36.61088 35.58712,-64.31513c0,-39.07969 -31.79531,-70.875 -70.875,-70.875c-39.07969,0 -70.875,31.79531 -70.875,70.875c0,27.70425 18.09281,46.31681 35.58713,64.31513c11.95819,12.30469 23.41238,24.10931 28.53506,38.178c-24.24319,0.79931 -36.55969,6.03619 -36.55969,15.63188c0,10.45012 14.57269,15.75 43.3125,15.75c28.73981,0 43.3125,-5.29988 43.3125,-15.75c0,-9.59569 -12.3165,-14.83256 -36.55969,-15.63188zM63,94.5c0,-34.73662 28.26337,-63 63,-63c34.73663,0 63,28.26338 63,63c0,24.51094 -16.20281,41.17837 -33.3585,58.82625c-11.68256,12.01725 -23.64469,24.32587 -29.6415,39.26475c-5.99681,-14.93887 -17.96288,-27.2475 -29.6415,-39.26475c-17.15569,-17.64787 -33.3585,-34.31531 -33.3585,-58.82625zM126,220.5c-26.00325,0 -35.4375,-4.70925 -35.4375,-7.875c0,-2.96887 8.30813,-7.30013 30.81488,-7.81987c0.23231,1.30725 0.40162,2.63419 0.51581,3.98475c-7.67419,0.35044 -16.89187,1.62619 -16.89187,3.83512c0,2.62631 13.02525,3.9375 20.99869,3.9375c7.97344,0 20.99869,-1.31119 20.99869,-3.9375c0,-2.20894 -9.21769,-3.48469 -16.89187,-3.83512c0.11419,-1.35056 0.2835,-2.68144 0.51581,-3.98475c22.50675,0.51975 30.81488,4.851 30.81488,7.81987c0,3.16575 -9.43425,7.875 -35.4375,7.875z"></path><path d="M157.5,94.5c0,-17.36831 -14.13169,-31.5 -31.5,-31.5c-17.36831,0 -31.5,14.13169 -31.5,31.5c0,17.36831 14.13169,31.5 31.5,31.5c17.36831,0 31.5,-14.13169 31.5,-31.5zM102.375,94.5c0,-13.02919 10.59581,-23.625 23.625,-23.625c13.02919,0 23.625,10.59581 23.625,23.625c0,13.02919 -10.59581,23.625 -23.625,23.625c-13.02919,0 -23.625,-10.59581 -23.625,-23.625z"></path><path d="M165.375,94.5h7.875c0,-26.05444 -21.19556,-47.25 -47.25,-47.25v7.875c21.71138,0 39.375,17.66362 39.375,39.375z"></path><circle cx="32" cy="24" transform="scale(3.9375,3.9375)" r="4"></circle></g></g></svg></p>
+         <%= form_for resource, url: session_path(resource_name), remote: true, method: :post do |f| %>         
+          <%= devise_error_messages! %>
+          <div class="flash_messages"> 
+            <%= render "shared/flash" %>
+          </div>
+          <div class="form-group">
+            <%= f.email_field :email, autofocus: true, autocomplete: "email",placeholder: "Username", class: "form-control" %>
+          </div>
+          <div class="form-group">
+            <%= f.password_field :password, autocomplete: "off", placeholder: "Password", class:"form-control" %>
+          </div>
+           <% if devise_mapping.rememberable? -%>
+            <div class="form-group">
+              <label class="style-checkbox"> Remember me
+                <%= f.check_box :remember_me %>
+                <span class="checkmark"></span>
+              </label>
+            </div>
+          <%end%>
+          <div class="form-group">
+            <button class="btn btn-submit" type="submit">Log in</button>
+          </div>
+          <div class="form-group">
+            <%- if devise_mapping.recoverable? && controller_name != 'passwords' && controller_name != 'registrations' %>
+               <p class="forgot-password-link text-center">
+                <%= link_to "Forgot your password?", new_password_path(resource_name) %><br />
+              </p>
+            <%end%>
+          </div>
+          <div class="form-group top-37">
+            <p class="sign-up-account-link">
+              <a href="#" class="sign-a">Don't have an account?</a> 
+              <%= link_to "Sign up", new_registration_path(resource_name), class: "btn sing-up-btn" %>
+          </div>
+        <%end%>
+      </div>
+    </div>
+  </div>
+</div>

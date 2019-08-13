@@ -1,0 +1,418 @@
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, or any plugin's
+ * vendor/assets/stylesheets directory can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the bottom of the
+ * compiled file so the styles you add here take precedence over styles defined in any other CSS/SCSS
+ * files in this directory. Styles in this file should be added after the last require_* statement.
+ * It is generally better to create a new file per style scope.
+ *
+ *= require_tree .
+ *= require_self
+ */
+
+ @import "bootstrap-sprockets";
+ @import "bootstrap";
+ @import "font-awesome";
+
+
+ .navbar-top-links > li > a {
+    padding: 14px 15px !important;
+ }
+
+ button:focus {outline:0;}
+
+ button:focus {outline:0 !important;}
+
+ #error_explanation h2 {
+   font-size: 15px !important;
+ }
+
+/* Sign up and Sign in */
+
+.log-sign-12-padding{
+  padding: 0px 45px 0px 45px;
+}
+
+body{
+  font-family: 'Roboto', sans-serif !important;
+  color: #4b4d57 !important;;
+  padding: 0px;
+  margin: 0px;
+  font-weight: 400 !important;;
+}
+.style-checkbox-full{
+  width: 100%;
+  height: 100vh;
+  background: #f7f6f2;
+
+}
+.sign_up_form{
+  width: 80%;
+  margin: auto;
+  margin-top: 27%;
+
+}
+
+.sign_up_form input {
+  height: 45px;
+  background: #e6e1de6e;
+  border: 0px;
+  box-shadow: inset 0 0px 0px rgba(0,0,0,.075);
+  font-weight: 400 !important;
+  padding: 2px 0px 0px 12px;
+  border: 1px solid #dbdfe4;
+  transition: all .2s linear;
+  -webkit-appearance: none;
+}
+
+.style-checkbox {
+  display: block;
+  position: relative;
+  padding-left: 27px;
+  margin-bottom: 12px;
+  cursor: pointer;
+  font-size: 15px;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  user-select: none;
+  color: #BFB6AD;
+  font-weight: 400;
+}
+
+.style-checkbox input {
+  position: absolute;
+  opacity: 0;
+  cursor: pointer;
+  
+}
+
+.checkmark {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 18px;
+  width: 18px;
+  border: 2px solid #BFB6AD;
+  border-radius: 4px
+}
+
+
+.style-checkbox input:checked ~ .checkmark {
+  background: transparent;
+}
+
+.checkmark:after {
+  content: "";
+  position: absolute;
+  display: none;
+}
+
+.style-checkbox input:checked ~ .checkmark:after {
+  display: block;
+}
+
+.style-checkbox .checkmark:after {
+  
+  left: 5px;
+  top: 1px;
+  width: 5px;
+  height: 10px;
+  border: solid #51BFA4;
+  border-width: 0 2px 2px 0;
+  -webkit-transform: rotate(45deg);
+  -ms-transform: rotate(45deg);
+  transform: rotate(45deg);
+}
+
+.btn-submit, .btn-submit:hover{
+  width: 100%;
+  height: 45px;
+  background: #51BFA4;
+  color: #fff !important;
+  font-size: 20px !important;
+  font-weight: 400 !important;
+}
+.forgot-password-link a{
+  text-align: center;
+  font-size: 13px;
+  margin: 0px;
+  margin-top: -6px;
+  color: #BFB6AD;
+  font-weight: 400;
+  cursor: pointer;
+  text-decoration: none;
+}
+
+.sign-up-account-link .sign-a {
+  font-size: 15px;
+  color: #BFB6AD;
+  font-weight: 400;
+  cursor: pointer;
+  text-decoration: none;
+  line-height: 33px;
+}
+
+ .sign-up-account-link .sing-up-btn{
+  float: right;
+  background: transparent;
+  border: 1px solid #51BFa4;
+  padding: 7px 26px 7px 26px;
+  color: #53bfa4;
+  font-weight: 500;
+  text-align: center;
+}
+
+.sing-up-btn:hover{
+  background: #51BFA4;
+  color: #fff !important;
+}
+
+.top-37{
+  margin-top: 37px;
+}
+
+/*End Sing up sign in */
+
+  h1, h2, h3{
+   margin: 10px;
+   font-size: 25px;
+  }
+
+
+  #wrapper {
+    width: 100%;
+  }
+
+  #page-wrapper {
+    padding: 0 15px;
+    min-height: 580px !important;
+    background-color: #fff;
+  }
+
+@media(min-width:768px) {
+  #page-wrapper {
+    position: inherit;
+    margin: 0 0 0 235px;
+    padding: 0 15px;
+    border-left: 1px solid #e7e7e7;
+  }
+}
+
+#wrapper .navbar-default{
+  min-height: 60px;
+  background: #fff;
+  box-shadow: 1px 2px 3px rgba(0, 0, 0, 0.1);
+}
+
+
+#wrapper .customize-default-navbar{
+  min-height: 60px;
+  background: #343a40;
+  box-shadow: 1px 2px 3px rgba(0, 0, 0, 0.1);
+  height: 100vh;
+}
+
+#wrapper .navbar-default .navbar-brand{
+  line-height: 32px
+}
+
+.page-header{
+  padding-bottom: 9px;
+  margin: 70px 0 20px !important;
+  border-bottom: 1px solid #eeeeee;
+}
+
+.navbar-top-links {
+  margin-right: 0;
+}
+
+.navbar-top-links li {
+  display: inline-block;
+}
+
+.navbar-top-links li:last-child {
+  margin-right: 15px;
+}
+
+.navbar-top-links li a {
+  padding: 15px;
+  min-height: 50px;
+  line-height: 30px;
+  color: #868e96;
+}
+
+.navbar-top-links .dropdown-menu li {
+  display: block;
+}
+
+.navbar-top-links .dropdown-menu li:last-child {
+  margin-right: 0;
+}
+
+.navbar-top-links .dropdown-menu li a {
+  padding: 3px 20px;
+  min-height: 0;
+}
+
+.navbar-top-links .dropdown-menu li a div {
+  white-space: normal;
+}
+
+.navbar-top-links .dropdown-messages,
+.navbar-top-links .dropdown-tasks,
+.navbar-top-links .dropdown-alerts {
+  width: 310px;
+  min-width: 0;
+}
+
+.navbar-top-links .dropdown-messages {
+  margin-left: 5px;
+}
+
+.navbar-top-links .dropdown-tasks {
+  margin-left: -59px;
+}
+
+.navbar-top-links .dropdown-alerts {
+  margin-left: -123px;
+}
+
+.navbar-top-links .dropdown-user {
+  right: 0;
+  left: auto;
+}
+
+.sidebar .sidebar-nav.navbar-collapse {
+  padding-right: 0;
+  padding-left: 0;
+  padding-top: 5px;
+}
+
+.sidebar .sidebar-search {
+  padding: 15px;
+}
+
+.sidebar ul li {
+  border-bottom: 1px solid transparant;
+}
+
+.sidebar ul li a.active {
+  background-color: #eee;
+}
+
+.sidebar .arrow {
+  float: right;
+}
+
+.sidebar .fa.arrow:before {
+  content: "\f104";
+}
+
+.sidebar .active>a>.fa.arrow:before {
+  content: "\f107";
+}
+
+.sidebar .nav-second-level li,
+.sidebar .nav-third-level li {
+  padding-right: 0;
+  border-bottom: 0!important;
+}
+
+.sidebar .nav-second-level li a {
+  padding-left: 37px;
+}
+
+.sidebar .nav-third-level li a {
+  padding-left: 52px;
+}
+
+@media(min-width:768px) {
+  .sidebar {
+    z-index: 1;
+    position: absolute;
+    width: 235px;
+  }
+
+  .navbar-top-links .dropdown-messages,
+  .navbar-top-links .dropdown-tasks,
+  .navbar-top-links .dropdown-alerts {
+    margin-left: auto;
+  }
+}
+
+.sidebar-nav {
+  height: calc(100vh - 60px);
+  background: #343a40;
+}
+
+.sidebar-nav .nav > li > a {
+  padding: 15px 15px;
+  color: #868e96;
+  font-size: 15px;
+}
+
+.fa.arrow:before {
+  content: "\f104";
+}
+
+.active > a > .fa.arrow:before {
+  content: "\f107";
+}
+
+.plus-times {
+  float: right;
+}
+
+.fa.plus-times:before {
+  content: "\f067";
+}
+
+.active > a > .fa.plus-times {
+  filter: progid:DXImageTransform.Microsoft.BasicImage(rotation=1);
+  -webkit-transform: rotate(45deg);
+  -moz-transform: rotate(45deg);
+  -ms-transform: rotate(45deg);
+  -o-transform: rotate(45deg);
+  transform: rotate(45deg);
+}
+
+.plus-minus {
+  float: right;
+}
+
+.fa.plus-minus:before {
+  content: "\f067";
+}
+
+.active > a > .fa.plus-minus:before {
+  content: "\f068";
+}
+
+
+@media (max-width: 768px) {
+  .log-sign-12-padding{
+    padding: 0px 23px 0px 0px;
+  }
+}
+
+
+.active-col-md-12{
+  background: #fff;
+  border-left: 3px solid #389cff;
+}
+
+.fade-in-message{
+  font-size: 30px;
+  text-align: center;
+  margin-top: 30%;
+  display: none;
+  position: absolute;
+  left: 0;
+  right: 0;
+}
